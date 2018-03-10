@@ -59,5 +59,16 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### Install the Vue Devtools in Chrome browser
     https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd/
 
+##### Webpack 
+webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.<br/>
+
+For a basic example, imagine we have a bunch of CommonJS modules. They cannot run directly inside the browser, so we need to "bundle" them into a single file that can be included via a <script> tag. webpack can follow the dependencies of the require() calls and do that for us.
+
+##### Vue Loader 
+vue-loader is a loader for webpack that can transform Vue components written in the standard format into a plain JavaScript module:<br/>
+
+`In a nutshell, the combination of webpack and vue-loader gives you a modern, flexible and extremely powerful front-end workflow for authoring Vue.js applications.`
+
+
 
 
