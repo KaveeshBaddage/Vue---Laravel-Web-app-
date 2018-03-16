@@ -69,6 +69,60 @@ vue-loader is a loader for webpack that can transform Vue components written in 
 
 `In a nutshell, the combination of webpack and vue-loader gives you a modern, flexible and extremely powerful front-end workflow for authoring Vue.js applications.`
 
+## Flow of the redering content
 
+In `index.html`, it contains following code snip. App component will me mounted here.<br/>
 
+    <body>
+        <div id="app"></div>
+        <!-- built files will be auto injected -->
+    </body>
 
+In `main.js` it create a new Vue instance. <br/>
+
+    new Vue({
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
+    })
+
+In `App.vue` it defines a template that will be render as app component. <br/>
+
+    <template>
+    <div id="app">
+        <!-- <img src="./assets/logo.png"> -->
+        <router-view/>
+    </div>
+    </template>
+
+Here  <router-view/> will add all the routing path and components reagarding to that routes.<br/>
+
+In `router/index.js` defines all routes in a array.<br/>
+
+    routes: [
+        {
+        path: '/',
+        name: 'HelloWorld',
+        component: HelloWorld
+        },
+        {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: Dashboard
+        }
+    ]
+
+### Add front-end CSS library — Bootstrap V4.
+
+    npm i bootstrap-vue
+
+Then, register BootstrapVue plugin in your app entry point(router/index.js)<br/>
+
+    import BootstrapVue from 'bootstrap-vue'
+    Vue.use(BootstrapVue);
+
+And import Bootstrap and Bootstrap-Vue css files:<br/>
+
+    import 'bootstrap/dist/css/bootstrap.css'
+    import 'bootstrap-vue/dist/bootstrap-vue.css'
