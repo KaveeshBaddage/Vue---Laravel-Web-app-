@@ -126,3 +126,35 @@ And import Bootstrap and Bootstrap-Vue css files:<br/>
 
     import 'bootstrap/dist/css/bootstrap.css'
     import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+### Remove front-end CSS library — Bootstrap V4 from project and also removes it from dependencies in package.json.
+
+    npm uninstall bootstrap-vue --save
+
+
+### Add Vuetify progressive framework 
+
+    npm install vuetify --save
+
+### Import Vuetify and tell Vue to use it
+
+In most cases this will be index.js or main.js<br/>
+
+    import Vue from 'vue'
+    import Vuetify from 'vuetify'
+ 
+    Vue.use(Vuetify)
+
+
+include the Vuetify css file. Simply include the Vuetify css file in your index.html or import the actual stylus file or the minified css.<br/>
+
+    // index.js or main.js
+    import 'vuetify/dist/vuetify.min.css'
+
+The easiest way to include the Material Design icons is to add a link tag to your index.html file.<br/>
+
+    <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    </head>
+
+
