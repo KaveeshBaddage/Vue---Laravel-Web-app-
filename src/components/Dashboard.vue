@@ -1,46 +1,64 @@
 <template>
-    <div >
-        <!-- <b-container fluid> -->
-            <!-- <b-row > -->
-            <b-navbar toggleable="md" type="dark" variant="dark">
+<div id="app">
+  <v-app id="inspire">
+   <v-navigation-drawer
+      fixed
+      v-model="drawer"
+      app
+    >
+      <v-list dense>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Home</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Get Text</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>contact_mail</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Contact Us</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+        <v-toolbar color="dark grey" dark fixed app>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title>Tesseract OCR</v-toolbar-title>
+    </v-toolbar>
+    <v-content>
+               <v-jumbotron color="">
+                <v-container fill-height>
+                  <v-layout align-center>
+                    <v-flex>
+                      <h3 class="display-3">Welcome to the Tesseract OCR</h3>
+                      <span class="subheading"> Free Online OCR service allows you to convert scanned images to editable text formats and extract text from JPEG/TIFF/BMP files.</span>
+                      <v-divider class="my-3"></v-divider>
+                      <div class="title mb-3">Check out our newest features!</div>
+                      <v-btn large color="primary" class="mx-0">See more</v-btn>
+                    </v-flex>
+                  </v-layout>
+                </v-container>
+              </v-jumbotron>
+    </v-content>
+    <v-footer app>
+          <v-spacer></v-spacer>
+          &copy; Kaveesh Baddage
+    </v-footer>
+  </v-app>
+</div>
 
-            <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-
-            <b-navbar-brand href="#">Tessaract OCR</b-navbar-brand>
-
-                        <b-collapse is-nav id="nav_collapse">
-
-                            <!-- Right aligned nav items -->
-                            <b-navbar-nav class="ml-auto">
-
-                            <b-nav-item-dropdown right>
-                                <!-- Using button-content slot -->
-                                <template slot="button-content">
-                                <em>User</em>
-                                </template>
-                                <b-dropdown-item href="#">Profile</b-dropdown-item>
-                                <b-dropdown-item href="#">Signout</b-dropdown-item>
-                            </b-nav-item-dropdown>
-                            </b-navbar-nav>
-
-                        </b-collapse>
-        </b-navbar>
-        <!-- <b-row> -->
-    <!-- </b-container> -->
-            <b-container class="bv-example-row" fluid>
-                <b-row>
-                    <b-col cols="2">
-                        <b-nav toggleable="md" type="dark" variant="dark" vertical class="w-25">
-                            <b-nav-item active>Active</b-nav-item>
-                            <b-nav-item>Link</b-nav-item>
-                            <b-nav-item>Another Link</b-nav-item>
-                        </b-nav>
-                    </b-col>
-                    <b-col cols="1o">Welcome to TESSERACT OCR</b-col>
-                </b-row>
-            </b-container>
-    </div>
-        
 </template>
 
 <script>
@@ -48,7 +66,8 @@ export default {
   name: "Dashboard",
   data() {
     return {
-      data: "dashboard data"
+      data: "dashboard data",
+      drawer: null
     };
   }
 };
