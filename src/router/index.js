@@ -1,13 +1,11 @@
 import Vue from 'vue'
-import BootstrapVue from 'bootstrap-vue'
+import Vuetify from 'vuetify'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Dashboard from '@/components/Dashboard'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
+import 'vuetify/dist/vuetify.min.css'
 Vue.use(Router)
-Vue.use(BootstrapVue)
+Vue.use(Vuetify)
 
 export default new Router({
   routes: [
