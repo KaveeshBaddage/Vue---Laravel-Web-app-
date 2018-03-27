@@ -13,7 +13,7 @@
             </v-list-tile-content>
           </v-list-tile>
            <v-divider></v-divider>
-        <v-list-tile v-for="item in items" :key="item.title" @click="1">
+        <v-list-tile v-for='item in items' :key='item.title' @click='1'>
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -22,7 +22,6 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-      
     </v-navigation-drawer>
         <v-toolbar color="dark grey" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
@@ -59,13 +58,13 @@ export default {
   name: 'Dashboard',
   data () {
     return {
-      drawer: null,
+      drawer: false,
       data: '',
       items: [
-          { title: 'Home', icon: 'dashboard' },
-          { title: 'About', icon: 'question_answer' },
-          {title:'Contact Us',icon:'contact_mail'}
-        ]
+        { title: 'Home', icon: 'dashboard' },
+        { title: 'About', icon: 'question_answer' },
+        { title: 'Contact Us', icon: 'contact_mail' }
+      ]
     }
   }
 }
@@ -75,9 +74,9 @@ export default {
 <style scoped>
 h1,
 h2 {
-  font-weight: normal;
+  font-weight: normal
 }
 a {
-  color: #42b983;
+  color: #42b983
 }
 </style>
