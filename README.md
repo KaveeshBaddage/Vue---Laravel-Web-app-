@@ -157,4 +157,27 @@ The easiest way to include the Material Design icons is to add a link tag to you
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
     </head>
 
+### Vue Components
+
+Here is a vue component<br/>
+
+    `// Define a new component called button-counter
+    Vue.component('button-counter', {
+    data: function () {
+        return {
+        count: 0
+        }
+    },
+    template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    })`
+
+Component can be used as follows<br/>
+
+    <div id="components-demo">
+    <button-counter></button-counter>
+    </div>
+
+Component `data` must be function. If it is not we cannot use same component in many times. Because every reused component will refer same object. A component’s data option must be a function to avoid that. So that each instance can maintain an independent copy of the returned data object.<br/>
+
+
 
