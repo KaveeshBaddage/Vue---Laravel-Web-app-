@@ -7,7 +7,8 @@
           <span class="subheading"> Free Online OCR service allows you to convert scanned images to editable text formats and extract text from JPEG/TIFF/BMP files.</span>
           <v-divider class="my-3"></v-divider>
           <div class="title mb-3">Check out our newest features!</div>
-          <v-btn  @click="drawer = !drawer" large color="primary" class="mx-0">See more</v-btn>
+          <v-btn  @click="counter += 1,childData = !childData" large color="primary" class="mx-0">See more</v-btn>
+          <p>The button above has been clicked {{ counter }} {{ drawer }} {{childData}} times.</p>
         </v-flex>
      </v-layout>
     </v-container>
@@ -17,9 +18,28 @@
 <script>
 export default {
   data: () => ({
-    drawer: false
+    drawer: false,
+    counter: 0,
+    childData: ''
   }
-  )
+  ),
+  props: {
+    parentData: {
+      type: Boolean,
+      default () {
+        return true
+      }
+    }
+  },
+  methods: {
+    // maybe onchagne may onclick whatever..
+    // handleDataFc: function () {
+    //   this.$emit('interface', this.childData) // handle data and give it back to parent by interface
+    // }
+  },
+  beforeMount () {
+    this.childData = this.parentData // save props data to itself's data and deal with it
+  }
 }
 </script>
 
