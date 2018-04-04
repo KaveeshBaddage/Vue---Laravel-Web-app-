@@ -12,7 +12,7 @@
       <v-toolbar-title>Tesseract OCR</v-toolbar-title>
     </v-toolbar>
     <v-content>
-  <homePage></homePage>
+  <homePage :parentData="parentData"></homePage>
   </v-content>
   <customFooter></customFooter>
   </v-app>
@@ -26,13 +26,19 @@ import homePage from './HomePage.vue'
 export default {
   name: 'Dashboard',
   data: () => ({
-    drawer: false
+    drawer: false,
+    parentData: true
   }
   ),
   components: {
     sidebar,
     customFooter,
     homePage
+  },
+  method: {
+    handleFcAfterDateBack: function (event) {
+      console.log('data after child handle: ', event) // get the data after child dealing
+    }
   }
 }
 </script>
